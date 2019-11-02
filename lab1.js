@@ -75,18 +75,20 @@ console.log(`The number of word 'et' in the string is: ${count}`);
 // "put it up"
 // "Was it a car or a cat I saw?" and "No 'x' in Nixon".
 
-let str ="race car";
-let restr = str.split('').reverse().join('');
-console.log(restr); // prints reversed: rac ecar
-// here we get: false -->
-if(str === restr) console.log(true);
-else console.log(false);
+let str ="race car";        //true
+// str ="step on no pets";   //true
+// str = "Was it a car or a cat I saw?"; //false
 
-str ="step on no pets";
-restr = str.split('').reverse().join('');
-console.log(restr); //prints reversed: step on no pets
-// here we get: true -->
-if(str === restr) console.log(true);
-else console.log(false);
+let strNoSpace = "";
+for(let i=0;i<str.length;i++){
+  if(str[i]=== " ") continue;
+  else strNoSpace += str[i];
+}
+let restr = strNoSpace.split('').reverse().join('');
+// console.log(restr); // prints reversed: rac ecar
+// here we get: false -->
+// strNoSpace === restr ? true : false;  //true
+
+strNoSpace === restr ? console.log(`${str} is a palindrome`) : console.log(`${str} is NOT a palindrome`);
 
 
